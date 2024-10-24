@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 import { apiConnector } from '../Services/apiConnector';
 import { productEndpoints } from '../Services/apis';
 import { CgProfile } from "react-icons/cg";
+import { setAdmin,setToken } from '../Redux/Slices/authSlice';
 function Navbar() {
 
     const navigate = useNavigate()
@@ -35,6 +36,16 @@ function Navbar() {
             setCartLendth(response.data.details.cartItem.length)
         }
         catch(error){
+            if(error.response.data.message === "Token is invalid"){
+                dispatch(setToken("null"))
+                localStorage.setItem("token", 'null')
+        
+                dispatch(setAdmin(false))
+                localStorage.setItem("admin", false)
+        
+                navigate("/")
+                return ;
+              }
             toast.error(error.response.data.message);
             // console.log("Error while findinf the lenght")
             return;
