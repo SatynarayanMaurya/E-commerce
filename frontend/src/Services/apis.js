@@ -1,6 +1,6 @@
 
 // const BASE_URL = "http://localhost:4000"
-const BASE_URL = "http://192.168.1.25:4000"
+const BASE_URL = "https://e-commerce-backend-7e6y.onrender.com"
 
 
 export const authEndpoints = {
