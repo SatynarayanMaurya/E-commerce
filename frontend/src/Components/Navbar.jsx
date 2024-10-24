@@ -3,7 +3,7 @@ import logo from "../Assests/Auth/logo_ShopNEXT.png"
 import { IoSearch } from "react-icons/io5";
 import { FaCartShopping } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import {useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { apiConnector } from '../Services/apiConnector';
 import { productEndpoints } from '../Services/apis';
@@ -16,7 +16,7 @@ function Navbar() {
     const [cartLength , setCartLendth] = useState(0)
     const isCartUpdate = useSelector((state)=>state.auth.isCartUpdate)
     const admin = useSelector((state)=>state.auth.isAdmin)
-
+     const dispatch = useDispatch()
     const profileHandler = ()=>{
         if(admin === true || admin === "true"){
             navigate("/dashboard")
