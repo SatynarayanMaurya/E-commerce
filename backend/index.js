@@ -13,7 +13,7 @@ database.connect()
 const port = process.env.PORT || 4000;
 
 const options = {
-    origin:"https://e-commerce-frontend-green-ten.vercel.app/",
+    origin:"https://e-commerce-frontend-green-ten.vercel.app",
     credentials: true,
 }
 app.use(fileUpload({
