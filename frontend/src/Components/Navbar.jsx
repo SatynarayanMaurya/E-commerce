@@ -63,9 +63,11 @@ function Navbar() {
                     <img src={logo} alt="logo" className='w-[110px] lg:w-[120px]'/>
                 </div>
 
-                <div className=' hidden lg:flex items-center relative'>
-                    <input type="text" placeholder='Search...' className='pl-8 pr-12 py-2 rounded-xl  w-[600px] outline-none text-black' />
-                    <p className='text-2xl absolute text-black right-2'><IoSearch/></p>
+                <div className='  your_element '>
+                    <div className='flex items-center relative'>
+                        <input type="text" placeholder='Search...' className='pl-8 pr-12 py-2 rounded-xl  w-[600px] outline-none text-black' />
+                        <p className='text-2xl absolute text-black right-2'><IoSearch/></p>
+                    </div>
                 </div>
 
                 <div className='flex items-center lg:gap-8  gap-4'>
