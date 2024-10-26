@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 
 function SecondNavbar() {
   return (
-    <div className='mt-[64px] hidden lg:block  h-[110px] border-b shadow-lg mb-4 '>
+    <div className='mt-[64px]   h-[110px] border-b shadow-lg mb-4 '>
 
             <div className='w-[85%] mx-auto flex flex-wrap justify-between items-center'>
 
