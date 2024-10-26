@@ -57,7 +57,7 @@ function AdminDashboard() {
             <p className='text-3xl font-semibold lg:hidden ' onClick={()=>setMenuButton(!menuButton)}><AiOutlineMenu/></p>  
             <div className='flex justify-between '>
                 {/* side bar  */}
-                <div className={`lg:w-[20%] border shadow-xl lg:px-8 px-4 py-6 flex flex-col ${menuButton ? "flex absolute mt-2 z-20 bg-white":"hidden"} lg:flex`}>
+                <div className={`lg:w-[20%] border shadow-xl lg:px-8 px-4 py-6 flex flex-col ${menuButton ? "flex absolute mt-2 z-20 bg-white":"your_element"} lg:flex`}>
 
                     <NavLink to="/dashboard" end className={({ isActive }) =>isActive ? ' flex gap-2 items-center px-8 py-3 bg-[#2874f0] text-white rounded-lg cursor-pointer' : 'text-black flex gap-2 items-center px-8 py-3 rounded-lg cursor-pointer'}>
                         <p className='text-xl'><MdDashboard/></p>
