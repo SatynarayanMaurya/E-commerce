@@ -5,9 +5,9 @@ import { MdCategory } from "react-icons/md";
 import { MdOutlineCrisisAlert } from "react-icons/md";
 import { GoPeople } from "react-icons/go";
 import { FaJediOrder } from "react-icons/fa6";
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { NavLink, Outlet, useLocation,useNavigate  } from 'react-router-dom';
 import { FiLogOut } from "react-icons/fi";
-import { setLoading } from '../../Redux/Slices/authSlice';
+import { setAdmin, setLoading, setToken } from '../../Redux/Slices/authSlice';
 import { apiConnector } from '../../Services/apiConnector';
 import { authEndpoints } from '../../Services/apis';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,7 +22,7 @@ function AdminDashboard() {
     const token = useSelector((state)=>state.auth.token)
     const dispatch = useDispatch()
     const [menuButton, setMenuButton ] = useState(false)
-
+    const navigate = useNavigate()
 
     const getUserDetails = async ()=>{
         try{
@@ -33,6 +33,16 @@ function AdminDashboard() {
         }
         catch(error){
             dispatch(setLoading(false))
+            if(error.response.data.message === "Token is invalid"){
+                dispatch(setToken("null"))
+                localStorage.setItem("token", 'null')
+                
+                dispatch(setAdmin(false))
+                localStorage.setItem("admin", false)
+                
+                navigate("/")
+                
+            }
             toast.error(error.response.data.message)
             return ;
         }
