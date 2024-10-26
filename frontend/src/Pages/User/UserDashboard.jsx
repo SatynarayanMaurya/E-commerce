@@ -3,11 +3,12 @@ import { toast } from 'react-toastify'
 import { apiConnector } from '../../Services/apiConnector'
 import { authEndpoints } from '../../Services/apis'
 import { useDispatch, useSelector } from 'react-redux'
-import {setLoading} from "../../Redux/Slices/authSlice"
+import {setAdmin, setLoading, setToken} from "../../Redux/Slices/authSlice"
 import Spinner from '../../Components/Spinner'
+import { useNavigate } from 'react-router-dom'
 function UserDashboard() {
 
-
+    const navigate = useNavigate();
     const token = useSelector((state)=>state.auth.token)
     const [userDetail, setUserDetail] = useState({})
     const loading = useSelector((state)=>state.auth.loading)
@@ -22,6 +23,16 @@ function UserDashboard() {
         }
         catch(error){
             dispatch(setLoading(false))
+            if(error.response.data.message === "Token is invalid"){
+                dispatch(setToken("null"))
+                localStorage.setItem("token", 'null')
+                
+                dispatch(setAdmin(false))
+                localStorage.setItem("admin", false)
+                
+                navigate("/")
+                
+            }
             toast.error(error.response.data.message)
             return ;
         }
