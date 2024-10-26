@@ -18,7 +18,7 @@ function Profile() {
         <div className='lg:pt-10 flex  relative  justify-between'>
        
             {/* side bar  */}
-            <div className={`lg:w-[20%] w-[65%] border-2  flex-col gap-4 h-[100vh] ${menuButton ? "flex absolute z-20 bg-white":"hidden"} lg:flex`}>
+            <div className={`lg:w-[20%] w-[65%] border-2  flex-col gap-4 h-[100vh] ${menuButton ? "flex absolute z-20 bg-white":"your_element"} lg:flex`}>
                 
                 <NavLink to={"/profile"} end className={({ isActive }) =>
                     isActive
