@@ -79,8 +79,8 @@ function Cart() {
                     <div className='lg:w-[50%] w-[33%]  flex lg:gap-1 gap-6'>
                         <div className='flex lg:gap-20 gap-8'>
                             <p className='lg:w-[100px] '>Price</p>
-                            <p className='lg:w-[100px] lg:block hidden '>Quantity</p>
-                            <p className='lg:w-[100px] lg:block hidden'>Subtotal</p>
+                            <p className='lg:w-[100px] your_element '>Quantity</p>
+                            <p className='lg:w-[100px] your_element'>Subtotal</p>
                         </div>
                         <div className='text-2xl lg:w-[50px] cursor-pointer bg-red-400'></div>
                     </div>
@@ -103,8 +103,8 @@ function Cart() {
                                             <div className='lg:w-[50%] w-[33%] flex lg:gap-1 gap-6'>
                                                 <div className='flex   lg:gap-20 gap-8 '>
                                                     <p className='lg:w-[100px]'>₹ {cartItem.price}</p>
-                                                    <p className='lg:w-[100px] lg:block hidden pl-6'>1</p>
-                                                    <p className='lg:w-[100px] lg:block hidden'>₹ {cartItem.price}</p>
+                                                    <p className='lg:w-[100px] your_element pl-6'>1</p>
+                                                    <p className='lg:w-[100px] your_element'>₹ {cartItem.price}</p>
                                                 </div>
                                                 <p onClick={()=>crossHandler(cartItem._id)} className='text-2xl lg:w-[50px] cursor-pointer text-red-600'><IoMdClose/></p>
                                             </div>
